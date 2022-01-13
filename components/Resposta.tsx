@@ -12,12 +12,13 @@ interface RespostaProps {
 
 const Resposta = (props: RespostaProps) => {
   const resposta = props.valor;
+  const respostaRevelada = resposta.revelada ? styles.respostaRevelada : "";
   return (
     <div
       className={styles.resposta}
       onClick={() => props.respostaFornecida(props.indice)}
     >
-      <div className={styles.conteudoResposta}>
+      <div className={`${respostaRevelada} ${styles.conteudoResposta}`}>
         {!resposta.revelada ? (
           <div className={styles.frente}>
             <div
